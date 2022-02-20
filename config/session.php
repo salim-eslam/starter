@@ -126,11 +126,12 @@ return [
     |
     */
 
-    'cookie' => env(
-        'SESSION_COOKIE',
-        Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
-    ),
+//    'cookie' => env(
+//        'SESSION_COOKIE',
+//        Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
+//    ),
 
+    'cookie' =>'laravel_session',
     /*
     |--------------------------------------------------------------------------
     | Session Cookie Path
@@ -155,13 +156,13 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN', null),
-
-    /*
-    |--------------------------------------------------------------------------
+//    'domain' => env('SESSION_DOMAIN', 'mysite.com'),
+    'domain' =>'my_domain',
+    /*--------------------------------------------------------------------
     | HTTPS Only Cookies
     |--------------------------------------------------------------------------
     |
+    |------
     | By setting this option to true, session cookies will only be sent back
     | to the server if the browser has a HTTPS connection. This will keep
     | the cookie from being sent to you if it can not be done securely.
@@ -197,5 +198,5 @@ return [
     */
 
     'same_site' => 'lax',
-
+    'domain' => env('SESSION_DOMAIN', ''),
 ];

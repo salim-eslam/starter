@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RouteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,3 +67,30 @@ Route::resource('news','NewsController');
 Auth::routes(['verify'=>true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
+
+
+Route::get('/redirect/{service}','SocialControler@redirect');
+Route::get('/callback/{service}','SocialControler@callback');
+
+Route::get('/fillable','RouteControler@get_offer');
+
+Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function()
+{
+        Route::group(['prefix'=>'offers'],function () {
+
+            /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+        Route::get('/create','RouteControler@set_offer');
+        Route::post('/store','RouteControler@store_offer')->name("store");// name function is used to give aname to route
+        Route::get('/add','RouteControler@add_offer');
+        Route::get('/all','RouteControler@get_offer');
+
+
+        });
+
+
+    Route::get('/fillable','RouteControler@get_offer');
+
+
+
+});

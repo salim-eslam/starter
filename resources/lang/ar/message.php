@@ -14,6 +14,14 @@ return [
     */
 
 
-    'welcom'=>'مرحبا'
+    'welcom'=>'مرحبا',
+    'offer name'=>'اسم العرض',
+    'offer name ar'=>'اسم العرض بالعربى',
+    'offer name en'=>'اسم العرض بالانجليزى',
 
+
+    'offer price'=>'سعر العرض',
+    'offer details'=>'تفاصيل العرض',
+    'offer details ar'=>'تفاصيل العرض بالعربى',
+    'offer details en'=>'تفاصيل العرض بالانجليزى'
 ];

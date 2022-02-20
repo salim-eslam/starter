@@ -27,7 +27,9 @@
             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
+        <meta charset="UTF-8">
         <!-- Masthead Subheading-->
         <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
     </div>
 </header>
+<!doctype html>
